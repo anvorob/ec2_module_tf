@@ -11,8 +11,8 @@ data "aws_ami" "main" {
   }
 }
 
-resource "aws_instance" "example" {
-  ami = data.aws_ami.example.id
+resource "aws_instance" "main" {
+  ami = data.aws_ami.main.id
   subnet_id = var.subnet_id
   key_name = var.key_name
   security_groups = var.sg_list
