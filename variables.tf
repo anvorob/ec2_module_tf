@@ -8,20 +8,17 @@ variable "key_name" {
   description = "Key name"
 }
 
-variable "sg_list"
-{
+variable "sg_list" {
   type = list
   description = "List of Security Groups"
 }
 
-variable "instance_type"
-{
+variable "instance_type" {
   type = string
   description = "Instance type"
 }
 
-varialbe "name"
-{
+varialbe "name" {
   type = string
   description = "EC2 instance name"
 }
