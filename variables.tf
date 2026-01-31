@@ -18,7 +18,7 @@ variable "instance_type" {
   description = "Instance type"
 }
 
-varialbe "name" {
+variable "name" {
   type = string
   description = "EC2 instance name"
 }
