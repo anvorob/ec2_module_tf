@@ -15,7 +15,6 @@ data "aws_ami" "main" {
 }
 
 resource "aws_instance" "main" {
-  ami = if (data.aws_ami.main.id != "") ? : var.ami_id
   ami = var.ami_id != null ? var.ami_id : data.aws_ami.main[0].id
   subnet_id = var.subnet_id
   key_name = var.key_name
