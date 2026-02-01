@@ -1,4 +1,5 @@
 data "aws_ami" "main" {
+  count = var.ami_id == null ? 1 : 0
   most_recent = true
   owners      = ["amazon"]
 
@@ -14,7 +15,8 @@ data "aws_ami" "main" {
 }
 
 resource "aws_instance" "main" {
-  ami = data.aws_ami.main.id
+  ami = if (data.aws_ami.main.id != "") ? : var.ami_id
+  ami = var.ami_id != null ? var.ami_id : data.aws_ami.main[0].id
   subnet_id = var.subnet_id
   key_name = var.key_name
   security_groups = var.sg_list
