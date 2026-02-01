@@ -22,3 +22,8 @@ variable "name" {
   type = string
   description = "EC2 instance name"
 }
+
+variable "ami_id" {
+  type = string
+  description = "AMI ID, if not defined search will be executed based on filters provided"
+}
