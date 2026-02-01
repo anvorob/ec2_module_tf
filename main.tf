@@ -1,13 +1,15 @@
 data "aws_ami" "main" {
   most_recent = true
   owners      = ["amazon"]
-  filter {
-    name   = "architecture"
-    values = ["arm64"]
-  }
+
   filter {
     name   = "name"
-    values = ["al2023-ami-2023*"]
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+  }
+
+  filter {
+    name   = "boot-mode"
+    values = ["legacy-bios"] 
   }
 }
 
