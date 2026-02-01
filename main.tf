@@ -19,12 +19,12 @@ resource "aws_instance" "main" {
   subnet_id = var.subnet_id
   key_name = var.key_name
   security_groups = var.sg_list
-  instance_market_options {
-    market_type = "spot"
-    spot_options {
-      max_price = 0.0031
-    }
-  }
+  #instance_market_options {
+  #  market_type = "spot"
+  #  spot_options {
+  #    max_price = 0.0031
+  #  }
+  #}
   instance_type = var.instance_type
   tags = {
     Name = var.name
